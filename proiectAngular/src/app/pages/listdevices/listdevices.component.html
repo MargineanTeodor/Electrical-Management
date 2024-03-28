@@ -1,0 +1,31 @@
+<h1 class = "text-center">Electrical Management
+    <form (ngSubmit)="back()">
+    <div class="text-right">
+        <button class=" btn btn-primary" type="submit">Back</button>
+    </div>
+    </form>
+</h1>
+<h2>List of Users
+</h2>
+<table class = "table table-striped">
+    <thead>
+        <tr>
+                <th>Id</th>
+                <th>Description</th>
+                <th>Address</th>
+                <th>Consumption</th>
+                <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let device of listOfDevice">
+            <td>{{device.id}}</td>
+            <td>{{device.description}}</td>
+            <td>{{device.address}}</td>
+            <td>{{device.maximHrEnergyConsumption}}</td>
+            <td>
+                <button (click)="deleteDevice(device.id)" class="btn btn-danger" style="margin-left: 10px">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

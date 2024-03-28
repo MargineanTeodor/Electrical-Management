@@ -1,0 +1,22 @@
+<div class="chat-container">
+    <div *ngFor="let message of messages" 
+         [class.message-from-id1-to-id2]="isFromId1ToId2(message)" 
+         [class.message-from-id2-to-id1]="!isFromId1ToId2(message)">
+        <div class="message">
+            {{ message.message }}
+            <span class="read-indicator" *ngIf="message.seen">✔️</span>
+        </div>
+    </div>
+
+    <div class="message-input">
+        <form (ngSubmit)="sendMessage()">
+            <div class="form-group">
+                <input type="text" class="form-control" id="username"
+                       [(ngModel)]="newMessage.message" name="username">
+            </div>
+            <div class="text-center">
+                <button class="btn btn-success" type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+/* Existing styles */
+.current-month {
+    background-color: #e3f2fd; /* Light blue background for current month days */
+  }
+  
+  td {
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  td:hover {
+    background-color: #d1e0f0; /* Change color on hover for visual feedback */
+  }
+  
+  /* New styles for rounded borders */
+  .table {
+    border-radius: 15px; /* Adjust the radius as per your preference */
+    overflow: hidden; /* Ensures the inner elements don't overflow the rounded corners */
+  }
+  
+  .table th, .table td {
+    border-color: #dee2e6; /* Optional: to style the border color */
+  }
+  

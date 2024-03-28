@@ -1,0 +1,48 @@
+services: 
+  postgres:
+    image: postgres
+    environment:
+      - POSTGRES_PASSWORD=admin
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=postgres
+    ports:
+      - 5432:5432
+    volumes:
+      - postgres:/var/lib/postgresql/data
+  
+  backenduser:
+    image: backenduser:latest
+    ports:
+      - 8080:8080
+    depends_on:
+      - postgres
+  
+  backenddevice:
+    image: backenddevice:latest
+    ports:
+      - 8081:8081
+    depends_on:
+      - postgres
+
+  backendsensor:
+    image: backendsensor:latest
+    ports:
+      - 8082:8082
+    depends_on:
+      - postgres
+
+  backendchat:
+    image: backendchat:latest
+    ports:
+      - 8083:8083
+    depends_on:
+      - postgres
+  
+  app:
+    container_name: angular
+    image: angular
+    ports:
+      - 4200:4200
+
+volumes: 
+  postgres:

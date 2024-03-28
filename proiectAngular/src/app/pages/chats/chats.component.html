@@ -1,0 +1,27 @@
+<h1 class = "text-center">Electrical Management
+    <form (ngSubmit)="getBack()">
+    <div class="text-right">
+        <button class=" btn btn-primary" type="submit">Back</button>
+    </div>
+    </form>
+</h1>
+<h2>List of Users
+</h2>
+<table class = "table table-striped">
+    <thead>
+        <tr>
+                <th>Id</th>
+                <th>Username</th>
+                <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let user of listOfUsers">
+            <td>{{user.id}}</td>
+            <td>{{user.username}}</td>
+            <td>
+                <button (click)="chat(user.id)" class="btn btn-info" style="margin-left: 10px">Chat</button>
+               </td>
+        </tr>
+    </tbody>
+</table>

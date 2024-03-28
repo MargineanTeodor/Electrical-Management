@@ -1,0 +1,38 @@
+<h1 class = "text-center">Electrical Management
+    <form (ngSubmit)="logout()">
+    <div class="text-right">
+        <button class=" btn btn-primary" type="submit">Back</button>
+    </div>
+    </form>
+    <form (ngSubmit)="SupportChat()">
+        <div class="text-right">
+            <button class=" btn btn-primary" type="submit">SupportChat</button>
+        </div>
+        </form>
+</h1>
+<h2>List of Users
+</h2>
+<div>
+    <p>{{ stock?.text }}</p>
+  </div>
+<table class = "table table-striped">
+    <thead>
+        <tr>
+                <th>Id</th>
+                <th>Description</th>
+                <th>Address</th>
+                <th>Consumption</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let device of listOfDevice">
+            <td>{{device.id}}</td>
+            <td>{{device.description}}</td>
+            <td>{{device.address}}</td>
+            <td>{{device.maximHrEnergyConsumption}}</td>
+            <td>
+                <button (click)="seeConsumption(device.id)" class="btn btn-success" style="margin-left: 10px">See Conspumption</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

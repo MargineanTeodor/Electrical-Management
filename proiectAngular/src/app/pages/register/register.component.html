@@ -1,0 +1,21 @@
+<h1 class="text-center">Electrical Management</h1>
+<div class="col-md-6 offset-md-3">
+    <h3>Register</h3>
+    <form (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" class="form-control" id="username" [(ngModel)]="user.username" name="username">
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="password" [(ngModel)]="user.password" name="password">
+        </div>
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" [(ngModel)]="user.name" name="name">
+        </div>
+        <div class="text-center">
+            <button class="btn btn-success" type="submit">Submit</button>
+        </div>
+    </form>
+</div>
